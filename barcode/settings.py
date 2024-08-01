@@ -26,7 +26,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR]
-DISABLE_COLLECTSTATIC=1
+USE_TZ = False
 
 
 LOGIN_URL = 'login'
