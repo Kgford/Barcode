@@ -13,21 +13,21 @@
 		<!-- Container to retrieve user input -->
 		<div id="inputs-container">
 		  <div style="border-bottom: 2px solid #fe8e14; padding: 0 2rem">
-			<h3 style="text-align: center">Scan the Job Traveler Barcode</h3>
+			<h3 style="text-align: center">Job Traveler Barcode</h3>
 		  </div>
 		  <div style="padding: 0 2rem">
-			<p>1. Enter or Scan the Item ID that you're seaching for:</p>
+			<p>Click the Scan Icon to begin. Then click the Job when it appears</p>
 			<div style="display: flex; gap: 1rem">
 			  <!-- Manual ID Input -->
 			 
-			 <input type="text" class="form-control" id="item-id" name ='_job_number' list= "_job_number"  placeholder="Search Job" onclick='this.form.submit()' >
+			 <input type="text" class="form-control" id="item-id" name ='_job_number' list= "_job_number"  placeholder="Scan Traveler for Job." onclick='this.form.submit()' >
 			
 			  <!-- Button to scan barcode to retrieve item ID -->
 			  <button type="button" id="scan-id-button" style="flex: 1">
 				<img src="{% static 'manufacturing/images/scan.png' %}"  alt="scan" style="width: 5rem; height: 5rem" />
 			  </button>
 			</div>
-			<p id="error-message" style="margin: 0 auto; color: red; display: none">Please enter the item ID</p>
+			<p id="error-message" style="margin: 0 auto; color: red; display: none">Scan the Traveler. Then click Job</p>
 		  </div>
 		</div>
     </form>

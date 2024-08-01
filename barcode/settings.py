@@ -10,25 +10,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
-#import django_heroku
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIR = os.path.join(SETTINGS_PATH,'templates')
-STATIC_DIR = os.path.join(BASE_DIR,'static')
-STATICFILES_DIRS = [STATIC_DIR]
-MEDIA_DIR = os.path.join(BASE_DIR,'media')
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/tcli/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_DIR = os.path.join(BASE_DIR,'static') 
+MEDIA_DIR = os.path.join(BASE_DIR,'media') 
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 STATIC_URL = '/static/'
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index' 
-
+STATICFILES_DIRS = [STATIC_DIR]
 
 
 LOGIN_URL = 'login'
@@ -44,8 +41,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 #DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880 #whatever size you want to gave i have given 5MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = None
 CSRF_COOKIE_HTTPONLY = False
-DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
-DBBACKUP_STORAGE_OPTIONS = {'location': BACKUPS}
+
 
 
 # config ckeditor
@@ -73,12 +69,6 @@ CKEDITOR_CONFIGS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-pc=socket.gethostname()
-if pc=='INN-AUTOCON':
-    DEBUG = True
-else:
-    DEBUG = False
-
 DEBUG = True
 #ALLOWED_HOSTS = ['192.168.1.29','192.168.1.57','127.0.0.1','*']
 ALLOWED_HOSTS = ['*']
@@ -132,20 +122,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'barcode.wsgi.application'
 
 
-DBBACKUP_CONNECTORS = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
-        'DUMP_CMD':DBBACKUP_STORAGE_OPTIONS,
-        }
-    }
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         },
     }
 
