@@ -1,3 +1,3 @@
-web: gunicorn remote_server.wsgi --pythonpath app --log-file - 
+web: gunicorn barcode.wsgi --pythonpath app --log-file - 
 release: python manage.py migrate
 
