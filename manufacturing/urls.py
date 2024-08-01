@@ -13,7 +13,7 @@ app_name = "manufacturing"
 
 urlpatterns =[
    path('barcode_view/', BarcodeView.as_view(template_name="barcode_view.html"), name='barcode_view'),
- ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ]
  
 
  

@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from e2_db.models import Order_Detail
 from django.views import View
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
@@ -21,7 +20,7 @@ class BarcodeView(View):
         try:
             job_number = request.POST.get('_job_number', -1)
             print('job_number=',job_number)
-            if job_number!=-1:
+            if job_number!=-1 and job_number!='':
                 return HttpResponseRedirect("http://innpriority:8888/manufacturing/pdf/?job_number=" + str(job_number))
                   
         except IOError as e:
