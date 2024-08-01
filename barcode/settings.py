@@ -11,25 +11,24 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 #import django_heroku
-import pyodbc
-import socket
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.dirname(PROJECT_ROOT)
-DATA_DIR = os.environ.get('DATA_DIR') # Going to move all database, static and media files to this directory
-BACKUPS = os.environ.get('BACKUPS') # Going to move all database, static and media files to this directory
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-BACKUPS = DATA_DIR
 TEMPLATE_DIR = os.path.join(SETTINGS_PATH,'templates')
-STATIC_DIR = os.path.join(DATA_DIR,'static') # move to DATA_DIR soon
-MEDIA_DIR = os.path.join(DATA_DIR,'media') # move to DATA_DIR soon
-MEDIA_ROOT  = os.path.join(DATA_DIR, 'media') # move to DATA_DIR soon
-MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(DATA_DIR, 'staticfiles') # move to DATA_DIR soon
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = [STATIC_DIR]
+MEDIA_DIR = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/tcli/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR]
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index' 
+
 
 
 LOGIN_URL = 'login'

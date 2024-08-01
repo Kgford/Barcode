@@ -1,6 +1,6 @@
 git add *
 git commit -a -m "removing beta"
-git push remote_server master
+git push origin master
 
 Deployed at Heroku
 
