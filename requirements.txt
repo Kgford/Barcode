@@ -10,3 +10,4 @@ django-mssql-backend==2.8.1
 django-session-timeout==0.1.0
 django_heroku
 gunicorn
+psycopg2-binary==2.8.6
