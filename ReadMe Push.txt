@@ -4,8 +4,13 @@ git push origin master
 
 Deployed at Heroku
 
-Heroku IPP
+Heroku ipp-barcode
 mford@innovativepp.com
 Gadget2023@
 
 Mford authenticator device required
+
+https://ats-barcode-dcb94b555eb6.herokuapp.com/manufacturing/barcode_view/
+
+License required:
+https://www.dynamsoft.com/
